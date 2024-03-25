@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+     body{
+        font-family:sans-serif;
+        font-size: 16px;
+        color:darkblue;
+    
+        background-color:white;
+        h1{
+            font-size:1.5em;
+            font-weight: bold;
+        }
+
+        h2{
+            font-size: 16px;
+            margin: 0 0 0.5rem 0;
+
+        }
+
+        div{
+            font-size: 8pt;
+            background-color: yellow;
+            padding: 3px;
+            border: 1px blue solid;
+            margin: 0.5em 0;
+        
+        }
+     }
+
+    .fc div:first-child{
+
+        font-weight: bold;
+        background-color: lightgreen;
+    }
+.nth1 div:nth-child(odd){
+
+    font-weight: bold;
+    background-color: lightgreen;
+}
+
+.nth2 *:nth-child(-n+3){
+    font-weight: bold;
+    background-color: #fcc;
+}
+
+.fot div:first-of-type{
+    font-weight: bold;
+    background-color: lightgreen;
+}
+
+.oot *:only-of-type{
+font-weight: bold;
+background-color: lightgreen;
+}
+
+.nthl div:nth-last-of-type(2){
+    font-weight: bold;
+    background-color: lightgreen;
+}
+
+.ntt div.kk:nth-of-type(odd){
+    font-weight: bolder;
+    background-color:orange;
+}
+
+p::after{
+    content:"-zapamti!";     /*ovo je primjer za after*/
+    color: darkred;
+}
+
+.kk p::before{
+
+    content:"zapamti ovo-";
+    color: brown;            /*ovo je primjer za befote*/   
+}
+
+
+p::first-letter, h1::first-letter{
+    color:rebeccapurple;
+    font-size: xx-large;     /*primjer za first-letter*/
+}
+
+
+
+/*od ovog dijela sve je proba*/
+h1::first-line{
+    color: blue;
+}
+
+ul::marker{
+    color: brown;
+    font-size: x-large;
+    list-style-type:armenian;
+}
+
+div::selection{
+
+    color: cornflowerblue;
+    background-color: burlywood;
+}
+
+.veliko::first-letter{
+    color: blue;
+    font-size: xx-large;
+}
+
+.drugi ol {
+    list-style-type: lower-alpha;
+}
+
+ol::marked{
+    color:red;
+}
+
+span::after{
+content:"\2713";
+font-weight: 900;
+}
+
+a::before{
+content:"\2023";
+font-size: 24px;
+}
+
+a:link{
+    color: red;
+    text-decoration: underline;
+}
+
+a:hover{
+color: chartreuse;
+background-color: darkslategray;
+
+}
+
+a:active{
+    color: rgb(38, 87, 221);
+}
+hr {border: dotted 2px red;}
+
+ul.g {
+    list-style: none;
+    color: lightblue;
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <h1>
+Pseudo-klase
+    </h1>
+
+    <h2>
+div:first-child
+    </h2>
+
+<section class="fc">
+<div>Prvi div blok</div>
+<div>Drugi div blok u sekciji
+<p>Prvi paragraf unutar drugog bloka</p>
+<div>Prvi div blok unutar drugog</div>
+</div>
+<div>Treci div blok
+<div>Prvi div blok unutar treceg</div>
+<div>Drugi div blok   </div>
+</div>
+
+</section>
+
+<section class="nth1">
+
+     <h2>div:nth-child(odd)</h2>
+
+     <div>Prvi</div>
+     <div>Drugi</div>
+     <p>Umetnuri paragraf</p>
+    <div>Treci</div>
+    <div>4</div>
+    <div>5</div>
+</section>
+
+
+<section class="nth2">
+<div>Prvi div blok</div>
+<div>Drugi</div>
+<p>Prvi paragraf</p>
+<div>treci</div>
+<div>4.</div>
+<div> Peti div blok</div>
+</section>
+
+<br><hr><br>
+
+<section class="fot">
+    <div>Prvi div blok</div>
+    <div>Drugi div blok</div>
+    <p>Umetnuti paragraf</p>
+    <div>Treci div blok
+   <p>Paragraf unutar treceg bloka</p>
+    <div>Prvi dio u trecem bloku</div>
+    <div>Drugi dio</div>
+    </div>
+    <div>Cetvrti div blok</div>
+    <div>Peti</div>
+    <div>Sesti</div>
+    </section>
+<br><hr><br>
+
+<section class="oot">
+    <h1>GLKLK</h1>
+    <div>Prvi</div>
+
+    <div>Drugi</div>
+
+    <p>Jedini paragraf u bloku</p>
+
+    <div> Treci div
+<p>Paragraf unutar</p>
+<div> Jedini div u trecem bloku</div>
+<p>Drugi paragraf u trecem bloku</p>
+</div>
+<div>4.</div>
+<div>5.</div>
+</section>
+
+<section class="nthl">
+<div>1.</div>
+<div>2.</div>
+<p>Jedini paragraf u velikom bloku</p>
+<div>3.
+    <p>Paragraf unutar treceg bloka</p>
+    <div>Div unutar 3. bloka</div>
+    <p>2. paragraf</p>
+</div>
+<div>4.</div>
+<p>Paragraf je pretposljednji element</p>
+<div>5.</div>
+</section>
+
+
+<section class="ntt">
+<div class="kk">Prvi div klase kk</div>
+<div class="kk">Drugi div klase kk</div>
+<p>pARAGRAF U SEKCIJI</p>
+<div>Treci div</div>
+<div class="kk">Cetvrti div klase kk</div>
+<p class="kk"> paragraf klase kk</p>
+<div class="kk">5. div klase kk</div>
+</section>
+
+
+
+
+<div class="prvi">
+<h1 class="veliko">1 Koji je glavni grad hrvatske?</h1>
+<ol>
+<li>
+Koprivnica
+</li>
+<li>Osijek</li>
+<li><span>Zagreb<span></li>
+</ol>
+</div>
+
+<p></p>
+
+<div class="drugi">
+<h1 class="veliko">2 Koja je rijeka koja protječe kroz Hrvatsku najduža?</h1>
+<ol>
+    <li>
+    Mura
+    </li>
+    <li><span>Sava</span></li>
+    <li>Drava</li>
+    </ol>
+</div>
+
+<p></p>
+    
+<div class="treci">
+    <h1 class="veliko">3 Pogledajte sljedece video linkove</h1>
+    <ul class="g">
+        <li><a href="">
+        Play bass guitar
+        </a>
+        </li>
+        <li><a>Stop eating sugar</a></li>
+        <li>Treci</li>
+        </ul>
+</div>  
+
+
+</body>
+</html>
